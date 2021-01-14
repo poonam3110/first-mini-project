@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>
+MY MUSIC
+</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+<link rel="stylesheet"  href="D:/javascript/MUSIC1.css">
+
+</head>
+<body>
+<p>
+<div class="main_div">
+<div class="music_container">
+<h1 id= "title"> lets play music<h1>
+<div class =image_container>
+<img src=https://ca-times.brightspotcdn.com/dims4/default/c59bd01/2147483647/strip/true/crop/3200x2240+0+0/resize/840x588!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F18%2F7c%2F397fcfd644e8aa379aea927be2cb%2Fla-et-ms-sleep-songs-insomnia-01.jpg>
+<audio src="https://soundbible.com//mp3/airplane-landing_daniel_simion.mp3"> 
+</audio>
+<div class="music_control">
+<i class="fas fa-backward"  id= "prev" title=previous></i>
+<i class="fas fa-play"  id="play" title=play></i> 
+<i class="fas fa-forward" id= "next" title=next></i>
+</div
+</div>
+</div>
+</p>
+<script>
+/*
+var index = 0;
+when click on next, index=index+1;
+when click on prev, index=index-1;
+
+const  newMusic = songs[index]
+
+*/
+ const  music =document.querySelector("audio");
+const play=document.getElementById("play");
+const img=document.querySelector("img");
+const title=document.getElementById("title");
+const prev=document.getElementById("prev");
+const next=document.getElementById("next");
+
+
+
+
+
+let isplaying=false;
+
+
+
+//for play
+const playmusic = function(){
+isplaying=true;
+music.play();
+play.classList.replace("fa-play","fa-pause");
+img.classList.add("anime");
+};
+
+ //for pause
+ const pausemusic =function(){
+isplaying=false;
+music.pause();
+play.classList.replace("fa-pause","fa-play");
+img.classList.remove("anime");
+};
+play.addEventListener("click",function(){
+
+if(isplaying)
+{
+pausemusic();
+}else
+{
+playmusic();
+}
+
+});
+
+
+</script>
+</body>
+
+</html>
